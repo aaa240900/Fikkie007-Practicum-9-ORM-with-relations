@@ -43,6 +43,8 @@
     </form>
     </td>
     </tr>
+    
 @endforeach
     </table>
+    {{$student->links()}}
 @endsection
