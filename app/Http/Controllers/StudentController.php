@@ -13,6 +13,12 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $student = student::where('name', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('student.index', compact('student'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
     public function index()
     {
         //The eloquent function to displays data
