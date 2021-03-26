@@ -43,9 +43,9 @@
     Address" >
     </div>
     <div class="form-group">
-    <label for="Date of Birth">Date of Birth</label>
-    <input type="Date of Birth" name="Date of Birth" class="form-control" id="Date of Birth" ariadescribedby="
-    Date of Birth" >
+    <label for="dateOfBirth">dateOfBirth</label>
+    <input type="dateOfBirth" name="dateOfBirth" class="form-control" id="dateOfBirth" ariadescribedby="
+    dateOfBirth" >
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

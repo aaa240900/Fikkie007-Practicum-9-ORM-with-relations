@@ -22,6 +22,6 @@ class Student extends Model //Model definisi
         'Class',
         'Major',
         'Address',
-        'Date of Birth',
+        'dateOfBirth',
     ];
 };
