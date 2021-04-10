@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\ClassModel;
 use Illuminate\Http\Request;
 use DB;
 
@@ -22,10 +23,9 @@ class StudentController extends Controller
     public function index()
     {
         //The eloquent function to displays data
-        $student = $student =DB::table('student')->paginate(3); //Mengambil semua isi tabel
-        //$spost = Student::orderBy('Nim','desc')->paginate(6);
-        return view('student.index',compact('student'));
-        //with('i', (request()->input ('page',1)-1)*5);
+        $student = Student::with('class')->get(); 
+        $paginate = Student::orderBy('id_student', 'asc')->paginate(3);
+        return view('student.index', ['student' => $student, 'paginate' => $paginate]);
     }
 
     /**
